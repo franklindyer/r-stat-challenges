@@ -32,6 +32,16 @@
                 "silver": 0.23,
                 "gold": 0.21
             }
+        },
+        {
+            "id": "gaussian-awgn",
+            "title": "Gaussian prior with Gaussian error",
+            "scoring": {
+                "bronze": 0.210,
+                "silver": 0.205,
+                "gold": 0.202
+            }
         }
+
     ]
 }

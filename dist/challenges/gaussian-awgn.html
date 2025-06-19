@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta charset='utf-8' />
+    <link href="/index.css" type="text/css" rel="stylesheet" />
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      processEscapes: true,
+      menuSettings: { inTabOrder: false },
+      "AssistiveMML": {
+         disabled: false,
+         styles: {
+            ".MJX_Assistive_MathML": {
+                position:"absolute!important",
+                clip: (MathJax.Hub.Browser.isMSIE && (document.documentMode||0) < 8 ?
+                    "rect(1px 1px 1px 1px)" : "rect(1px, 1px, 1px, 1px)"),
+                padding: "1px 0 0 0!important",
+                border: "0!important",
+                height: "1px!important",
+                width: "1px!important",
+                overflow: "hidden!important",
+                display:"block!important"
+            }
+        }
+      }
+    });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+
+</head>
+<body>
+    <h1>Gaussian prior with Gaussian error</h1>
+
+    <p>The parameter you need to estimate is called $\mu$. You can assume that it has a prior distribution of $\mu \sim \mathcal{N}(0,1)$, that is, the unit normal distribution. You are given a measurement $\omega \approx \mu$ whose error is also normally distributed $\sim\mathcal{N}(0,0.25)$, with standard deviation $\sigma = 0.5$.</p>
+
+<p>The loss-function is <script type="math/tex; mode=display">L(\mu, \mu^\ast) = (\mu - \mu^\ast)^2</script> and you should choose your estimate $\mu^\ast$ to minimize the <em>average expected loss</em>. </p>
+
+
+    <button id="code-run-button" disabled>Run code</button>
+    <div id="run-score-box"></div>
+    <pre id="code-error-box"></pre>
+    <div class="progress-bar" id="main-progress-bar"><div class="progress-bar-value"></div></div>
+    <div>
+        <div id="editor" style="height: 800px;">decision_fxn <- function(omega) {
+    # Estimate mu_hat in terms of the observation omega
+    mu_hat <- 0.0;
+    mu_hat
+}
+</div>
+        <div id="scoring-hint-box">
+            Scoring <hr> 
+            <b>Bronze:</b> 0.21 <br>
+            <b>Silver:</b> 0.205 <br>
+            <b>Gold:</b> 0.202
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.42.0/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        let CONF = {'bronze-color': '#cd7f32', 'silver-color': '#eeeeee', 'gold-color': '#ffd700', 'default-color': '#dddddd'};
+        let CHALLENGE = "gaussian-awgn";
+        let SCORING = {'bronze': 0.21, 'silver': 0.205, 'gold': 0.202};
+    </script>
+    <script type="text/javascript" src="/index.js"></script>
+
+</body>
+</html>
