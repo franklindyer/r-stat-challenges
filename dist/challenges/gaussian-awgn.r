@@ -14,3 +14,9 @@ this_puzzle <- make_parameter_problem(
     grader_prior(function() { rnorm(1, mean=0, sd=1) }, n_trials=2000),
     n_trials=2000
 );
+
+this_tester <- make_parameter_case(
+    function() { rnorm(1, mean=0, sd=1) },
+    awgn_theta_gen(0.5),
+    sq_loss
+);

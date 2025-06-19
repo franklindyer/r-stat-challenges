@@ -11,6 +11,10 @@ import('https://webr.r-wasm.org/latest/webr.mjs').then(
     runBtn.onclick = () => runCode(webR, setupCode);
     runBtn.disabled = false;
     
+    var testBtn = document.getElementById("code-test-button");
+    testBtn.onclick = () => runTest(webR, setupCode);
+    testBtn.disabled = false;
+    
     console.log("WebR is here!");
   }
 );
@@ -43,11 +47,49 @@ function handleGradeResult(grade) {
     }
 }
 
+async function runTest(webR, setupCode) {
+    var errorBox = document.getElementById("code-error-box");
+    errorBox.style.display = "none";
+    document.getElementById("code-test-button").disabled = true;
+    
+    let exBox = document.getElementById("run-example-box");
+    let exParamBox = document.getElementById("run-example-parameter");
+    let exObsBox = document.getElementById("run-example-observation");
+    let exEstBox = document.getElementById("run-example-estimate");
+    let exLossBox = document.getElementById("run-example-loss");
+
+    var code = editor.getValue();
+    let shelter = await new webR.Shelter();
+    let result0 = await shelter.captureR(setupCode);
+
+    try {
+        let result1 = await shelter.captureR(code);
+        let testRes = await shelter.evalR("this_tester(decision_fxn)");
+        let testResJs = await testRes.toJs();
+        let values = testResJs.values.map((x) => x.values);
+
+        exParamBox.textContent = `Parameter: ${values[0]}`;
+        exObsBox.textContent = `Observation: ${values[1]}`;
+        exEstBox.textContent = `Your estimate: ${values[2]}`;
+        exLossBox.textContent = `Loss: ${values[3]}`;
+        exBox.style.display = "block";
+    } catch (e) {
+        errorBox.style.display = "block";
+        errorBox.textContent = e.message;
+    } finally {
+        shelter.purge();
+
+        document.getElementById("code-test-button").disabled = false;
+    }
+}
+
 async function runCode(webR, setupCode) {
     var errorBox = document.getElementById("code-error-box");
     errorBox.style.display = "none";
     document.getElementById("code-run-button").disabled = true;
     document.getElementById("main-progress-bar").style.display = "block";
+    let exBox = document.getElementById("run-example-box");
+    exBox.style.display = "none";
 
     var code = editor.getValue();
     let shelter = await new webR.Shelter();
@@ -59,7 +101,6 @@ async function runCode(webR, setupCode) {
         let grade = await shelter.evalR("final_grade");
         grade = await grade.toJs();
        
-        console.log(result2);
         handleGradeResult(grade.values); 
     } catch (e) {
         errorBox.style.display = "block";

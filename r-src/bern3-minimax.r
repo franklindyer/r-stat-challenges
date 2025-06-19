@@ -13,3 +13,9 @@ this_puzzle <- make_parameter_problem(
     sq_loss,
     grader_minimax((0:500)/500)
 );
+
+this_tester <- make_parameter_case(
+    function() { runif(1, max=1) },
+    bern_theta_gen(10),
+    sq_loss
+);

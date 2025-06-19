@@ -5,14 +5,30 @@
 }
 
 #run-score-box {
+    background-color: #dddddd;
+    display: none;
+}
+
+.result-box {
     font-family: Menlo;
     font-size: 14px;
-    display: none;
     border-radius: 3px;
-    background-color: #dddddd;
     margin-top: 3px;
     margin-bottom: 3px;
     padding: 5px;
+}
+
+#run-example-box {
+    background-color: #adebb3;
+    display: none;
+    padding: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 3px;
+}
+
+.run-example-subbox {
+    background-color: #9eb8a0;
 }
 
 #code-error-box {

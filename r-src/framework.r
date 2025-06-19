@@ -17,6 +17,16 @@ make_parameter_problem <- function(theta_gen, loss_fxn, grader, n_trials=500) {
     run_test
 };
 
+make_parameter_case <- function(theta_picker, theta_gen, loss_fxn) {
+    function(decision_fxn) {
+        theta <- theta_picker();
+        omega <- theta_gen(theta)();
+        theta_star <- decision_fxn(omega);
+        loss <- loss_fxn(theta, theta_star);
+        list(theta, omega, theta_star, loss)
+    }
+}
+
 grader_prior <- function(theta_prior, n_trials=500) {
     function(risk_fxn_cap) {
         risk_value <- function(k) {

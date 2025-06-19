@@ -46,9 +46,9 @@
             "id": "gaussian-position-velocity",
             "title": "Particle measurement with Gaussian position, velocity and error",
             "scoring": {
-                "bronze": 1,
-                "silver": 0.5,
-                "gold": 0.1
+                "bronze": 0.30,
+                "silver": 0.26,
+                "gold": 0.233
             }
         }
 

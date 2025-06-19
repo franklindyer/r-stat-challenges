@@ -19,3 +19,9 @@ this_puzzle <- make_parameter_problem(
     grader_prior(function() { rnorm(2, mean=0, sd=1) }, n_trials=500),
     n_trials=500
 );
+
+this_tester <- make_parameter_case(
+    function() { rnorm(2, mean=0, sd=1) },
+    pos_vel_theta_gen(0.5, 10),
+    sq_loss
+)

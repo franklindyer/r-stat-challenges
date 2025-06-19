@@ -44,8 +44,15 @@
 </ul>
 
 
-    <button id="code-run-button" disabled>Run code</button>
-    <div id="run-score-box"></div>
+    <button id="code-run-button" disabled>Score my answer</button>
+    <button id="code-test-button" disabled>Run a test</button>
+    <div id="run-score-box" class="result-box"></div>
+    <div id="run-example-box">
+        <div class="run-example-subbox result-box" id="run-example-parameter"></div>
+        <div class="run-example-subbox result-box" id="run-example-observation"></div>
+        <div class="run-example-subbox result-box" id="run-example-estimate"></div>
+        <div class="run-example-subbox result-box" id="run-example-loss"></div>
+    </div>
     <pre id="code-error-box"></pre>
     <div class="progress-bar" id="main-progress-bar"><div class="progress-bar-value"></div></div>
     <div>

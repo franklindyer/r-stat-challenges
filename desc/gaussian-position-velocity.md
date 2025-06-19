@@ -4,7 +4,7 @@ The loss function for your estimate $x_0^\ast, v^\ast$ is $$L(\langle x_0, v\ran
 
 In the below R code:
 
-- `omega` is a vector of the $10$ measurements of the particle's position at $t=0,1,\cdots,10$
+- `omega` is a vector of the $10$ measurements of the particle's position at $t=0,1,\cdots,9$
 - `pos0` is your estimate of the particle's initial position
 - `vel` is your estimate of the particle's velocity
 - `decision_fxn` should return an R vector of length $2$, with respective entries `pos0` and `vel`

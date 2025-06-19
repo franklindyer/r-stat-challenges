@@ -11,3 +11,9 @@ this_puzzle <- make_parameter_problem(
     chicken_loss,
     grader_prior(function() { runif(1, max=1) })
 );
+
+this_tester <- make_parameter_case(
+    function() { runif(1, max=1) },
+    chicken_theta_gen,
+    chicken_loss
+);

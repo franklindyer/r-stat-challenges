@@ -40,15 +40,22 @@
 <p>In the below R code:</p>
 
 <ul>
-<li><code>omega</code> is a vector of the $10$ measurements of the particle's position at $t=0,1,\cdots,10$</li>
+<li><code>omega</code> is a vector of the $10$ measurements of the particle's position at $t=0,1,\cdots,9$</li>
 <li><code>pos0</code> is your estimate of the particle's initial position</li>
 <li><code>vel</code> is your estimate of the particle's velocity</li>
 <li><code>decision_fxn</code> should return an R vector of length $2$, with respective entries <code>pos0</code> and <code>vel</code></li>
 </ul>
 
 
-    <button id="code-run-button" disabled>Run code</button>
-    <div id="run-score-box"></div>
+    <button id="code-run-button" disabled>Score my answer</button>
+    <button id="code-test-button" disabled>Run a test</button>
+    <div id="run-score-box" class="result-box"></div>
+    <div id="run-example-box">
+        <div class="run-example-subbox result-box" id="run-example-parameter"></div>
+        <div class="run-example-subbox result-box" id="run-example-observation"></div>
+        <div class="run-example-subbox result-box" id="run-example-estimate"></div>
+        <div class="run-example-subbox result-box" id="run-example-loss"></div>
+    </div>
     <pre id="code-error-box"></pre>
     <div class="progress-bar" id="main-progress-bar"><div class="progress-bar-value"></div></div>
     <div>
@@ -62,9 +69,9 @@
 </div>
         <div id="scoring-hint-box">
             Scoring <hr> 
-            <b>Bronze:</b> 1 <br>
-            <b>Silver:</b> 0.5 <br>
-            <b>Gold:</b> 0.1
+            <b>Bronze:</b> 0.3 <br>
+            <b>Silver:</b> 0.26 <br>
+            <b>Gold:</b> 0.233
         </div>
     </div>
 
@@ -72,7 +79,7 @@
     <script>
         let CONF = {'bronze-color': '#cd7f32', 'silver-color': '#cccccc', 'gold-color': '#ffd700', 'default-color': '#dddddd'};
         let CHALLENGE = "gaussian-position-velocity";
-        let SCORING = {'bronze': 1, 'silver': 0.5, 'gold': 0.1};
+        let SCORING = {'bronze': 0.3, 'silver': 0.26, 'gold': 0.233};
     </script>
     <script type="text/javascript" src="/index.js"></script>
 
