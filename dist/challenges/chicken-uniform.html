@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset='utf-8' />
+    <link href="/index.css" type="text/css" rel="stylesheet" />
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      processEscapes: true,
+      menuSettings: { inTabOrder: false },
+      "AssistiveMML": {
+         disabled: false,
+         styles: {
+            ".MJX_Assistive_MathML": {
+                position:"absolute!important",
+                clip: (MathJax.Hub.Browser.isMSIE && (document.documentMode||0) < 8 ?
+                    "rect(1px 1px 1px 1px)" : "rect(1px, 1px, 1px, 1px)"),
+                padding: "1px 0 0 0!important",
+                border: "0!important",
+                height: "1px!important",
+                width: "1px!important",
+                overflow: "hidden!important",
+                display:"block!important"
+            }
+        }
+      }
+    });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+
+</head>
+<body>
+    <h1>Chicken</h1>
+
+    <p>This problem is called "chicken" because it is about daring to get as close as you can to a value, without going <em>too far</em> and exceeding it.</p>
+
+<p>The unknown parameter you need to estimate is called $\vartheta$. You can assume that it has the prior distribution $\vartheta\sim\mathcal{U}(0,1)$, that is, it is uniformly distributed on the interval $[0,1]$. You are given the value of another random variable $\omega\sim\mathcal U(0,\vartheta)$ and you need to use it to make an estimate $\vartheta^\ast$ for $\vartheta$. The loss function is: <script type="math/tex; mode=display">L(\vartheta, \vartheta^\ast) = \begin{cases}\vartheta-\vartheta^\ast & \text{if } \vartheta > \vartheta^\ast \\ \tfrac{1}{4} & \text{else}\end{cases}</script> As you can see, if your guess is less than the true value $\vartheta$, you will suffer less loss if you get closer to the true value $\vartheta$. But if your guess is <em>greater</em> than the true value, you will suffer a considerable loss regardless of how close your estimate is.</p>
+
+<p>In the R code below:</p>
+
+<ul>
+<li><code>omega</code> is a floating point number between $0$ and $1$</li>
+<li><code>decision_fxn</code> should return a floating point number giving your estimate $\vartheta^\ast$</li>
+</ul>
+
+
+    <button id="code-run-button" disabled>Run code</button>
+    <div id="run-score-box"></div>
+    <pre id="code-error-box"></pre>
+    <div class="progress-bar" id="main-progress-bar"><div class="progress-bar-value"></div></div>
+    <div>
+        <div id="editor" style="height: 800px;">decision_fxn <- function(omega) {
+    # Calculate your estimate theta_hat in terms of omega
+    theta_hat <- 0;
+    theta_hat
+}
+</div>
+        <div id="scoring-hint-box">
+            Scoring <hr> 
+            <b>Bronze:</b> 0.25 <br>
+            <b>Silver:</b> 0.23 <br>
+            <b>Gold:</b> 0.21
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.42.0/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        let CONF = {'bronze-color': '#cd7f32', 'silver-color': '#eeeeee', 'gold-color': '#ffd700', 'default-color': '#dddddd'};
+        let CHALLENGE = "chicken-uniform";
+        let SCORING = {'bronze': 0.25, 'silver': 0.23, 'gold': 0.21};
+    </script>
+    <script type="text/javascript" src="/index.js"></script>
+
+</body>
+</html>

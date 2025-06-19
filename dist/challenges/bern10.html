@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset='utf-8' />
+    <link href="/index.css" type="text/css" rel="stylesheet" />
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      processEscapes: true,
+      menuSettings: { inTabOrder: false },
+      "AssistiveMML": {
+         disabled: false,
+         styles: {
+            ".MJX_Assistive_MathML": {
+                position:"absolute!important",
+                clip: (MathJax.Hub.Browser.isMSIE && (document.documentMode||0) < 8 ?
+                    "rect(1px 1px 1px 1px)" : "rect(1px, 1px, 1px, 1px)"),
+                padding: "1px 0 0 0!important",
+                border: "0!important",
+                height: "1px!important",
+                width: "1px!important",
+                overflow: "hidden!important",
+                display:"block!important"
+            }
+        }
+      }
+    });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+
+</head>
+<body>
+    <h1>Bernoulli</h1>
+
+    <p>The parameter you need to guess is called $p$. You are given a list of the results of $10$ Bernoulli trials $\sim \text{Bern}(p)$ - that is, $10$ unfair coin flips that come up heads with probability $p$.</p>
+
+<p>The loss function is <script type="math/tex; mode=display">L(p,p^\ast) = (p-p^\ast)^2</script> and you need to minimize the expected average loss. You may assume a uniform prior distribution on $p\sim \mathcal U(0,1)$. That is, the true parameter $p$ is uniformly distributed in the interval $[0,1]$.</p>
+
+<p>In the below R code:</p>
+
+<ul>
+<li><code>omega</code> is an R vector of length 10 containing the Bernoulli trial results</li>
+<li><code>decision_fxn</code> should return a floating point number, namely your estimate $p^\ast$</li>
+</ul>
+
+
+    <button id="code-run-button" disabled>Run code</button>
+    <div id="run-score-box"></div>
+    <pre id="code-error-box"></pre>
+    <div class="progress-bar" id="main-progress-bar"><div class="progress-bar-value"></div></div>
+    <div>
+        <div id="editor" style="height: 800px;">decision_fxn <- function(omega) {
+    # Calculate your estimate p_star in terms of omega
+    p_star <- 0.0;
+    p_star
+}
+</div>
+        <div id="scoring-hint-box">
+            Scoring <hr> 
+            <b>Bronze:</b> 0.05 <br>
+            <b>Silver:</b> 0.03 <br>
+            <b>Gold:</b> 0.018
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.42.0/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        let CONF = {'bronze-color': '#cd7f32', 'silver-color': '#eeeeee', 'gold-color': '#ffd700', 'default-color': '#dddddd'};
+        let CHALLENGE = "bern10";
+        let SCORING = {'bronze': 0.05, 'silver': 0.03, 'gold': 0.018};
+    </script>
+    <script type="text/javascript" src="/index.js"></script>
+
+</body>
+</html>

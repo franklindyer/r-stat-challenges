@@ -1,0 +1,37 @@
+{
+    "config": {
+        "bronze-color": "#cd7f32",
+        "silver-color": "#eeeeee",
+        "gold-color": "#ffd700",
+        "default-color": "#dddddd"
+    },
+    "challenges": [
+        {
+            "id": "bern10",
+            "title": "Bernoulli",
+            "scoring": {
+                "bronze": 0.05,
+                "silver": 0.03,
+                "gold": 0.018
+            }
+        },
+        {
+            "id": "bern3-minimax",
+            "title": "Bernoulli minimax",
+            "scoring": {
+                "bronze": 0.05,
+                "silver": 0.04,
+                "gold": 0.035
+            }
+        },
+        {
+            "id": "chicken-uniform",
+            "title": "Chicken",
+            "scoring": {
+                "bronze": 0.25,
+                "silver": 0.23,
+                "gold": 0.21
+            }
+        }
+    ]
+}
