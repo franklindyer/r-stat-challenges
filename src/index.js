@@ -59,6 +59,7 @@ async function runCode(webR, setupCode) {
         let grade = await shelter.evalR("final_grade");
         grade = await grade.toJs();
        
+        console.log(result2);
         handleGradeResult(grade.values); 
     } catch (e) {
         errorBox.style.display = "block";

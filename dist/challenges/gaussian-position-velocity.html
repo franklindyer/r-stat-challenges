@@ -1,0 +1,80 @@
+<html>
+<head>
+    <meta charset='utf-8' />
+    <link href="/index.css" type="text/css" rel="stylesheet" />
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      processEscapes: true,
+      menuSettings: { inTabOrder: false },
+      "AssistiveMML": {
+         disabled: false,
+         styles: {
+            ".MJX_Assistive_MathML": {
+                position:"absolute!important",
+                clip: (MathJax.Hub.Browser.isMSIE && (document.documentMode||0) < 8 ?
+                    "rect(1px 1px 1px 1px)" : "rect(1px, 1px, 1px, 1px)"),
+                padding: "1px 0 0 0!important",
+                border: "0!important",
+                height: "1px!important",
+                width: "1px!important",
+                overflow: "hidden!important",
+                display:"block!important"
+            }
+        }
+      }
+    });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+
+</head>
+<body>
+    <h1>Particle measurement with Gaussian position, velocity and error</h1>
+
+    <p>A particle is moving along a line with unknown initial position $x_0$ and unknown velocity $v$. You need to estimate these paremeters $x_0, v$. You may assume that they both have unit normal prior distributions: <script type="math/tex; mode=display">\begin{align*}x_0 &\sim \mathcal{N}(0, 1) \\ v &\sim \mathcal{N}(0, 1)\end{align*}</script> You are given a sequence of $10$ measurements of the particle's position at times $t=0,1,\cdots, 9$. Each measurement has a certain error $\epsilon_i$. You may assume that these measurement errors are normally distributed with standard deviation $\sigma = 0.5$, so that <script type="math/tex; mode=display">\epsilon_i \sim \mathcal{N}(0, \tfrac{1}{4})</script>
+</p>
+
+<p>The loss function for your estimate $x_0^\ast, v^\ast$ is <script type="math/tex; mode=display">L(\langle x_0, v\rangle, \langle x_0^\ast, v^\ast\rangle) = (x_0 - x_0^\ast)^2 + (v - v^\ast)^2</script> and you should minimize the average expected loss of your estimates.</p>
+
+<p>In the below R code:</p>
+
+<ul>
+<li><code>omega</code> is a vector of the $10$ measurements of the particle's position at $t=0,1,\cdots,10$</li>
+<li><code>pos0</code> is your estimate of the particle's initial position</li>
+<li><code>vel</code> is your estimate of the particle's velocity</li>
+<li><code>decision_fxn</code> should return an R vector of length $2$, with respective entries <code>pos0</code> and <code>vel</code></li>
+</ul>
+
+
+    <button id="code-run-button" disabled>Run code</button>
+    <div id="run-score-box"></div>
+    <pre id="code-error-box"></pre>
+    <div class="progress-bar" id="main-progress-bar"><div class="progress-bar-value"></div></div>
+    <div>
+        <div id="editor" style="height: 800px;">decision_fxn <- function(omega) {
+    # Make an estimate for the initial position pos0 and the velocity vel, based on
+    #   the measurements in omega
+    pos0 <- 0;
+    vel <- 0;
+    c(pos0, vel)
+}
+</div>
+        <div id="scoring-hint-box">
+            Scoring <hr> 
+            <b>Bronze:</b> 1 <br>
+            <b>Silver:</b> 0.5 <br>
+            <b>Gold:</b> 0.1
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.42.0/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        let CONF = {'bronze-color': '#cd7f32', 'silver-color': '#eeeeee', 'gold-color': '#ffd700', 'default-color': '#dddddd'};
+        let CHALLENGE = "gaussian-position-velocity";
+        let SCORING = {'bronze': 1, 'silver': 0.5, 'gold': 0.1};
+    </script>
+    <script type="text/javascript" src="/index.js"></script>
+
+</body>
+</html>
