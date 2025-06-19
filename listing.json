@@ -1,7 +1,7 @@
 {
     "config": {
         "bronze-color": "#cd7f32",
-        "silver-color": "#eeeeee",
+        "silver-color": "#cccccc",
         "gold-color": "#ffd700",
         "default-color": "#dddddd"
     },

@@ -81,3 +81,33 @@ blockquote {
 blockquote p {
     margin: 0px;
 }
+
+.effect-shine {
+    -webkit-mask-image: linear-gradient(45deg,#000 45%,rgba(0,0,0,.1) 50%,rgba(0,0,0,.1) 51%,#000 55%);
+    mask-image: linear-gradient(45deg,#000 45%,rgba(0,0,0,.1) 50%,rgba(0,0,0,.1) 51%,#000 55%);
+    -webkit-mask-size: 300%;
+    mask-size: 300%;
+    /* -webkit-mask-position: 0; */
+    /* mask-position: 0; */
+
+    animation-name: shine;
+    animation-duration: 4s;   
+    animation-iteration-count: infinite;
+ 
+    /* animation-iteration-count: infinite;
+    transition: mask-position 2s ease,-webkit-mask-position 2s ease;
+    -webkit-mask-position: 120%;
+    mask-position: 120%;
+    opacity: 1; */
+}
+
+@keyframes shine {
+    from {
+        mask-position: 120%;
+        -webkit-mask-position: 120%;
+    }
+    to {
+        mask-position: 0%;
+        -webkit-mask-position: 0%;
+    }
+}
