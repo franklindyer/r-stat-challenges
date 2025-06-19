@@ -8,7 +8,7 @@
     "challenges": [
         {
             "id": "bern10",
-            "title": "Bernoulli",
+            "title": "Bernoulli 10-sample estimator",
             "scoring": {
                 "bronze": 0.05,
                 "silver": 0.03,
@@ -17,7 +17,7 @@
         },
         {
             "id": "bern3-minimax",
-            "title": "Bernoulli minimax",
+            "title": "Bernoulli 3-sample minimax",
             "scoring": {
                 "bronze": 0.05,
                 "silver": 0.04,
