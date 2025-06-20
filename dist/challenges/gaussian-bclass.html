@@ -30,17 +30,17 @@
 
 </head>
 <body>
-    <h1>Bernoulli 10-sample estimator</h1>
+    <h1>Binary classification with 2 Gaussians</h1>
 
-    <p>The parameter you need to guess is called $p$. You are given a list of the results of $10$ Bernoulli trials $\sim \text{Bern}(p)$ - that is, $10$ unfair coin flips that come up heads with probability $p$.</p>
+    <p>There are two normally distributed random variables $X\sim\mathcal N(1, 1)$ and $Y\sim\mathcal N(-1,2)$, that is, with respective means $\mu_X = 1$ and $\mu_Y = -1$ and respective standard deviations $\sigma_X = 1$ and $\sigma_Y = \sqrt{2}$. The random parameter $\theta$ is chosen uniformly and at random from the set ${\mathtt{TRUE},\mathtt{FALSE}}$. If $\vartheta$ is $\mathtt{TRUE}$, then you are given the value of $X$, and otherwise you are given the value of $Y$. From this information, you need to guess the value of $\vartheta$.</p>
 
-<p>The loss function is <script type="math/tex; mode=display">L(p,p^\ast) = (p-p^\ast)^2</script> and you need to minimize the expected average loss. You may assume a uniform prior distribution on $p\sim \mathcal U(0,1)$. That is, the true parameter $p$ is uniformly distributed in the interval $[0,1]$.</p>
+<p>The loss function is <script type="math/tex; mode=display">L(\vartheta,\vartheta^\ast) = \begin{cases}0 & \text{if }\vartheta=\vartheta^\ast \\ 1 & \text{else}\end{cases}</script> You need to choose your guess $\vartheta^\ast$ to minimize the average expected loss.</p>
 
-<p>In the below R code:</p>
+<p>In the R code below:</p>
 
 <ul>
-<li><code>omega</code> is an R vector of length 10 containing the Bernoulli trial results</li>
-<li><code>decision_fxn</code> should return a floating point number, namely your estimate $p^\ast$</li>
+<li><code>omega</code> is the value of either $X$ or $Y$, depending on whether $\vartheta$ is $\texttt{TRUE}$ or $\texttt{FALSE}$</li>
+<li><code>decision_fxn</code> must return a boolean, which is your guess for the value of $\vartheta$</li>
 </ul>
 
 
@@ -57,24 +57,24 @@
     <div class="progress-bar" id="main-progress-bar"><div class="progress-bar-value"></div></div>
     <div>
         <div id="editor" style="height: 800px;">decision_fxn <- function(omega) {
-    # Calculate your estimate p_star in terms of omega
-    p_star <- 0.0;
-    p_star
+    # Use omega to calculate a guess for whether the variable was drawn from X or not
+    isX <- TRUE;
+    isX
 }
 </div>
         <div id="scoring-hint-box">
             Scoring <hr> 
-            <b>Bronze:</b> 0.022 <br>
-            <b>Silver:</b> 0.018 <br>
-            <b>Gold:</b> 0.014
+            <b>Bronze:</b> 0.5 <br>
+            <b>Silver:</b> 0.3 <br>
+            <b>Gold:</b> 0.1
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.42.0/ace.js" type="text/javascript" charset="utf-8"></script>
     <script>
         let CONF = {'bronze-color': '#cd7f32', 'silver-color': '#cccccc', 'gold-color': '#ffd700', 'default-color': '#dddddd'};
-        let CHALLENGE = "bern10";
-        let SCORING = {'bronze': 0.022, 'silver': 0.018, 'gold': 0.014};
+        let CHALLENGE = "gaussian-bclass";
+        let SCORING = {'bronze': 0.5, 'silver': 0.3, 'gold': 0.1};
     </script>
     <script type="text/javascript" src="/index.js"></script>
 

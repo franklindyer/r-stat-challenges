@@ -10,9 +10,9 @@
             "id": "bern10",
             "title": "Bernoulli 10-sample estimator",
             "scoring": {
-                "bronze": 0.05,
-                "silver": 0.03,
-                "gold": 0.018
+                "bronze": 0.022,
+                "silver": 0.018,
+                "gold": 0.014
             }
         },
         {
@@ -31,6 +31,15 @@
                 "bronze": 0.25,
                 "silver": 0.23,
                 "gold": 0.21
+            }
+        },
+        {
+            "id": "gaussian-bclass",
+            "title": "Binary classification with 2 Gaussians",
+            "scoring": {
+                "bronze": 0.5,
+                "silver": 0.3,
+                "gold": 0.1
             }
         },
         {

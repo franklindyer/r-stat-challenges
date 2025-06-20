@@ -67,7 +67,6 @@ async function runTest(webR, setupCode) {
         let testRes = await shelter.evalR("this_tester(decision_fxn)");
         let testResJs = await testRes.toJs();
         let values = testResJs.values.map((x) => x.values);
-        console.log(values);
 
         exParamBox.textContent = `Parameter: ${values[0]}`;
         exObsBox.textContent = `Observation: ${values[1]}`;
@@ -102,7 +101,6 @@ async function runCode(webR, setupCode) {
         let grade = await shelter.evalR("final_grade");
         grade = await grade.toJs();
        
-        console.log(result2);
         handleGradeResult(grade.values); 
     } catch (e) {
         errorBox.style.display = "block";
