@@ -11,8 +11,8 @@ theta_picker <- function() { rbinom(1, 1, 0.5) };
 this_puzzle <- make_parameter_problem(
     gaussian_bclass_gen,
     unit_loss,
-    grader_prior(theta_picker, n_trials=2000),
-    n_trials=2000
+    grader_prior(theta_picker, n_trials=1000),
+    n_trials=1000
 );
 
 this_tester <- make_parameter_case(

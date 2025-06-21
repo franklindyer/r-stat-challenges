@@ -30,19 +30,17 @@
 
 </head>
 <body>
-    <h1>Binary classification with 2 Gaussians</h1>
+    <h1>Random point on a circle with Gaussian error</h1>
 
-    <p>There are two normally distributed random variables $X\sim\mathcal N(1, 1)$ and $Y\sim\mathcal N(-1,2)$, that is, with respective means $\mu_X = 1$ and $\mu_Y = -1$ and respective standard deviations $\sigma_X = 1$ and $\sigma_Y = \sqrt{2}$. The random parameter $\theta$ is chosen uniformly and at random from the set ${\mathtt{TRUE},\mathtt{FALSE}}$. If $\vartheta$ is $\mathtt{TRUE}$, then you are given the value of $X$, and otherwise you are given the value of $Y$. From this information, you need to guess the value of $\vartheta$.</p>
+    <p>The parameter you need to guess is called $\vartheta$. You may assume that it is chosen uniformly and at random from the interval $[0,2\pi)$, that is, $\vartheta\sim \mathcal U(0, 2\pi)$. You are given the value of the point corresponding to the angle $\vartheta$ on the unit circle, plus some amount of random error. That is, you are given the vector <script type="math/tex; mode=display">\vec{\omega} ~ = ~ \begin{bmatrix}\cos\vartheta \\ \sin\vartheta\end{bmatrix} + \begin{bmatrix}\epsilon_1 \\ \epsilon_2\end{bmatrix}</script> where $\epsilon_1, \epsilon_2$ are independent and normally distributed error terms with zero mean and respective standard deviations $\sigma_1 = 0.3$ and $\sigma_2 = 0.6$.</p>
 
-<p>In other words, you need to perform <em>binary classification</em> on the given values to guess whether they were produced by the random variable $X$, or the random variable $Y$.</p>
-
-<p>The loss function is <script type="math/tex; mode=display">L(\vartheta,\vartheta^\ast) = \begin{cases}0 & \text{if }\vartheta=\vartheta^\ast \\ 1 & \text{else}\end{cases}</script> You need to choose your guess $\vartheta^\ast$ to minimize the average expected loss.</p>
+<p>The loss function is the distance between the point on the unit circle corresponding to the true angle $\vartheta$ and the point on the unit circle corresponding to your estimated angle $\vartheta^\ast$: <script type="math/tex; mode=display">L(\vartheta, \vartheta^\ast) = (\cos\vartheta - \cos\vartheta^\ast)^2 + (\sin\vartheta - \sin\vartheta^\ast)^2</script> and you need to minimize the average expected loss.</p>
 
 <p>In the R code below:</p>
 
 <ul>
-<li><code>omega</code> is the value of either $X$ or $Y$, depending on whether $\vartheta$ is $\texttt{TRUE}$ or $\texttt{FALSE}$</li>
-<li><code>decision_fxn</code> must return a boolean, which is your guess for the value of $\vartheta$</li>
+<li><code>omega</code> is the point on the unit circle at angle $\vartheta$, plus some error</li>
+<li><code>decision_fxn</code> should return an angle in the interval $[0,2\pi)$ estimating $\vartheta$</li>
 </ul>
 
 
@@ -59,24 +57,24 @@
     <div class="progress-bar" id="main-progress-bar"><div class="progress-bar-value"></div></div>
     <div>
         <div id="editor" style="height: 800px;">decision_fxn <- function(omega) {
-    # Use omega to calculate a guess for whether the variable was drawn from X or not
-    isX <- TRUE;
-    isX
+    # Estimate the true angle in terms of omega, a perturbed point on the unit circle
+    theta_est <- 0;
+    theta_est
 }
 </div>
         <div id="scoring-hint-box">
             Scoring <hr> 
-            <b>Bronze:</b> 0.3 <br>
-            <b>Silver:</b> 0.25 <br>
-            <b>Gold:</b> 0.2
+            <b>Bronze:</b> 0.28 <br>
+            <b>Silver:</b> 0.265 <br>
+            <b>Gold:</b> 0.255
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.42.0/ace.js" type="text/javascript" charset="utf-8"></script>
     <script>
         let CONF = {'bronze-color': '#cd7f32', 'silver-color': '#cccccc', 'gold-color': '#ffd700', 'default-color': '#dddddd'};
-        let CHALLENGE = "gaussian-bclass";
-        let SCORING = {'bronze': 0.3, 'silver': 0.25, 'gold': 0.2};
+        let CHALLENGE = "unit-circle-awgn";
+        let SCORING = {'bronze': 0.28, 'silver': 0.265, 'gold': 0.255};
     </script>
     <script type="text/javascript" src="/shared.js"></script>
     <script type="text/javascript" src="/index.js"></script>

@@ -4,11 +4,15 @@
     <link href="/index.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Statistical problems in R</h1>
-    <ul>
+    <h1>Parameter estimation problems in R</h1>
+    <div id="problem-list-container">
     {% for chal in chals %}
-        <ul><a href="/challenges/{{ chal['id'] }}.html">{{ chal['title'] }}</a></ul>
+        <div class="problem-container-div" id="{{ chal['id'] }}-problem-div"
+            onclick="location.href='/challenges/{{ chal['id'] }}.html'">
+            <a>{{ chal['title'] }}</a>
+        </div>
     {% endfor %} 
-    </ul>
+    </div>
+    <script type="text/javascript" src="/shared.js"></script>
 </body>
 </html>

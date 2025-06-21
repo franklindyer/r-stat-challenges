@@ -4,21 +4,45 @@
     <link href="/index.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Statistical problems in R</h1>
-    <ul>
+    <h1>Parameter estimation problems in R</h1>
+    <div id="problem-list-container">
     
-        <ul><a href="/challenges/bern10.html">Bernoulli 10-sample estimator</a></ul>
+        <div class="problem-container-div" id="bern10-problem-div"
+            onclick="location.href='/challenges/bern10.html'">
+            <a>Bernoulli 10-sample estimator</a>
+        </div>
     
-        <ul><a href="/challenges/bern3-minimax.html">Bernoulli 3-sample minimax</a></ul>
+        <div class="problem-container-div" id="bern3-minimax-problem-div"
+            onclick="location.href='/challenges/bern3-minimax.html'">
+            <a>Bernoulli 3-sample minimax</a>
+        </div>
     
-        <ul><a href="/challenges/chicken-uniform.html">Chicken</a></ul>
+        <div class="problem-container-div" id="chicken-uniform-problem-div"
+            onclick="location.href='/challenges/chicken-uniform.html'">
+            <a>Chicken</a>
+        </div>
     
-        <ul><a href="/challenges/gaussian-bclass.html">Binary classification with 2 Gaussians</a></ul>
+        <div class="problem-container-div" id="gaussian-bclass-problem-div"
+            onclick="location.href='/challenges/gaussian-bclass.html'">
+            <a>Binary classification with 2 Gaussians</a>
+        </div>
     
-        <ul><a href="/challenges/gaussian-awgn.html">Gaussian prior with Gaussian error</a></ul>
+        <div class="problem-container-div" id="gaussian-awgn-problem-div"
+            onclick="location.href='/challenges/gaussian-awgn.html'">
+            <a>Gaussian prior with Gaussian error</a>
+        </div>
     
-        <ul><a href="/challenges/gaussian-position-velocity.html">Particle measurement with Gaussian position, velocity and error</a></ul>
+        <div class="problem-container-div" id="unit-circle-awgn-problem-div"
+            onclick="location.href='/challenges/unit-circle-awgn.html'">
+            <a>Random point on a circle with Gaussian error</a>
+        </div>
+    
+        <div class="problem-container-div" id="gaussian-position-velocity-problem-div"
+            onclick="location.href='/challenges/gaussian-position-velocity.html'">
+            <a>Particle measurement with Gaussian position, velocity and error</a>
+        </div>
      
-    </ul>
+    </div>
+    <script type="text/javascript" src="/shared.js"></script>
 </body>
 </html>

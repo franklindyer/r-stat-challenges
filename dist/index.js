@@ -1,3 +1,9 @@
+if (!(CHALLENGE in PROGRESS)) {
+    PROGRESS[CHALLENGE] = {
+        "badge": "none"
+    };
+}
+
 import('https://webr.r-wasm.org/latest/webr.mjs').then(
   async ({ WebR }) => {
     const webR = new WebR();
@@ -26,6 +32,24 @@ editor.getSession().setMode("ace/mode/r");
 editor.setOptions({
     maxLines: Infinity
 });
+if ("editor" in PROGRESS[CHALLENGE]) {
+    editor.getSession().setValue(PROGRESS[CHALLENGE]["editor"]);
+}
+
+function saveEditor() {
+    PROGRESS[CHALLENGE]["editor"] = editor.getValue();
+    setProgress(PROGRESS);
+}
+
+function registerScore(score) {
+    if (score == "gold") {
+        PROGRESS[CHALLENGE]["badge"] = "gold";
+    } else if (score == "silver" && PROGRESS[CHALLENGE]["badge"] !== "gold") {
+        PROGRESS[CHALLENGE]["badge"] = "silver";
+    } else if (score == "bronze" && !(PROGRESS[CHALLENGE]["badge"] in ["gold", "silver"])) {
+        PROGRESS[CHALLENGE]["badge"] = "bronze";
+    }
+}
 
 function handleGradeResult(grade) {
     var gradeBox = document.getElementById("run-score-box");
@@ -35,12 +59,15 @@ function handleGradeResult(grade) {
     if (grade < SCORING['gold']) {
         gradeBox.style.backgroundColor = CONF['gold-color'];
         gradeBox.classList.add("effect-shine");
+        registerScore("gold");
     } else if (grade < SCORING['silver']) {
         gradeBox.style.backgroundColor = CONF['silver-color'];
         gradeBox.classList.add("effect-shine");
+        registerScore("silver");
     } else if (grade < SCORING['bronze']) {
         gradeBox.style.backgroundColor = CONF['bronze-color'];
         gradeBox.classList.add("effect-shine");
+        registerScore("bronze");
     } else {
         gradeBox.style.backgroundColor = CONF['default-color'];
         gradeBox.classList.remove("effect-shine");
@@ -48,6 +75,8 @@ function handleGradeResult(grade) {
 }
 
 async function runTest(webR, setupCode) {
+    saveEditor();
+
     var errorBox = document.getElementById("code-error-box");
     errorBox.style.display = "none";
     document.getElementById("code-test-button").disabled = true;
@@ -84,6 +113,8 @@ async function runTest(webR, setupCode) {
 }
 
 async function runCode(webR, setupCode) {
+    saveEditor();
+
     var errorBox = document.getElementById("code-error-box");
     errorBox.style.display = "none";
     document.getElementById("code-run-button").disabled = true;

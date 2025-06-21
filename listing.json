@@ -37,9 +37,9 @@
             "id": "gaussian-bclass",
             "title": "Binary classification with 2 Gaussians",
             "scoring": {
-                "bronze": 0.5,
-                "silver": 0.3,
-                "gold": 0.1
+                "bronze": 0.3,
+                "silver": 0.25,
+                "gold": 0.2
             }
         },
         {
@@ -49,6 +49,15 @@
                 "bronze": 0.210,
                 "silver": 0.205,
                 "gold": 0.202
+            }
+        },
+        {
+            "id": "unit-circle-awgn",
+            "title": "Random point on a circle with Gaussian error",
+            "scoring": {
+                "bronze": 0.28,
+                "silver": 0.265,
+                "gold": 0.255
             }
         },
         {

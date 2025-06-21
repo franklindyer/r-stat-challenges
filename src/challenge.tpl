@@ -61,6 +61,7 @@
         let CHALLENGE = "{{ chal['id'] }}";
         let SCORING = {{ chal['scoring'] }};
     </script>
+    <script type="text/javascript" src="/shared.js"></script>
     <script type="text/javascript" src="/index.js"></script>
 
 </body>
