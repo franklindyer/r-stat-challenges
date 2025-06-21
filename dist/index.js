@@ -49,6 +49,7 @@ function registerScore(score) {
     } else if (score == "bronze" && !(PROGRESS[CHALLENGE]["badge"] in ["gold", "silver"])) {
         PROGRESS[CHALLENGE]["badge"] = "bronze";
     }
+    setProgress(PROGRESS);
 }
 
 function handleGradeResult(grade) {

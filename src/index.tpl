@@ -14,5 +14,22 @@
     {% endfor %} 
     </div>
     <script type="text/javascript" src="/shared.js"></script>
+    <script>
+        let CONF = {{ conf }};
+        console.log(PROGRESS);
+        for (var chal in PROGRESS) {
+            console.log(chal);
+            var d = document.getElementById(`${chal}-problem-div`);
+            var badge = PROGRESS[chal]["badge"];
+            if (badge !== undefined && badge !== "none") {
+                var color = CONF[`${badge}-color`];
+                var badgeEl = document.createElement("div");
+                badgeEl.classList.add("homepage-badge");
+                badgeEl.classList.add("effect-shine");
+                badgeEl.style.backgroundColor = color;
+                d.appendChild(badgeEl);
+            }
+        }
+    </script>
 </body>
 </html>

@@ -21,6 +21,13 @@
     box-shadow: 1px 1px 1px 1px #333333;
 }
 
+.homepage-badge {
+    border-radius: 25px;
+    float: right;
+    padding: 5px;
+    border: 2px solid black;
+}
+
 #main-container {
     width: 80%;
     margin-left: auto;
