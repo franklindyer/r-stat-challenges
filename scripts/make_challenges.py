@@ -23,8 +23,10 @@ for chal in LISTING['challenges']:
     f.write(html_page)
     f.close()
 
+md_content = open(f"./desc/index.md", 'r').read()
+html_content = markdown2.markdown(MD_PROC.convert(md_content))
 html_tpl = JENV.get_template("index.tpl")
-html_page = html_tpl.render(chals=LISTING['challenges'], conf=LISTING["config"])
+html_page = html_tpl.render(chals=LISTING['challenges'], conf=LISTING["config"], content=html_content)
 
 f = open(f"./dist/index.html", 'w')
 f.write(html_page)

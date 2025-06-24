@@ -30,7 +30,7 @@
 
 </head>
 <body>
-    <h1>Particle measurement with Gaussian position, velocity and error</h1>
+    <h1>Moving object measurements with Gaussian error, Bayes estimate</h1>
 
     <p>A particle is moving along a line with unknown initial position $x_0$ and unknown velocity $v$. You need to estimate these paremeters $x_0, v$. You may assume that they both have unit normal prior distributions: <script type="math/tex; mode=display">\begin{align*}x_0 &\sim \mathcal{N}(0, 1) \\ v &\sim \mathcal{N}(0, 1)\end{align*}</script> You are given a sequence of $10$ measurements of the particle's position at times $t=0,1,\cdots, 9$. Each measurement has a certain error $\epsilon_i$. You may assume that these measurement errors are normally distributed with standard deviation $\sigma = 0.5$, so that <script type="math/tex; mode=display">\epsilon_i \sim \mathcal{N}(0, \tfrac{1}{4})</script>
 </p>

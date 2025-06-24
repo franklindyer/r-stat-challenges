@@ -8,7 +8,7 @@
     "challenges": [
         {
             "id": "bern10",
-            "title": "Bernoulli 10-sample estimator",
+            "title": "10 unfair coin flips, Bayes estimator of coin bias",
             "scoring": {
                 "bronze": 0.022,
                 "silver": 0.018,
@@ -17,11 +17,20 @@
         },
         {
             "id": "bern3-minimax",
-            "title": "Bernoulli 3-sample minimax",
+            "title": "3 unfair coin flips, minimax estimator of coin bias",
             "scoring": {
                 "bronze": 0.05,
                 "silver": 0.04,
                 "gold": 0.035
+            }
+        },
+        {
+            "id": "bernoulli-switching",
+            "title": "Bernoulli bias switching time, maximum likelihood estimator",
+            "scoring": {
+                "bronze": 0.83,
+                "silver": 0.81,
+                "gold": 0.78
             }
         },
         {
@@ -44,7 +53,7 @@
         },
         {
             "id": "gaussian-awgn",
-            "title": "Gaussian prior with Gaussian error",
+            "title": "Random point with Gaussian error, Bayes estimate", 
             "scoring": {
                 "bronze": 0.210,
                 "silver": 0.205,
@@ -53,7 +62,7 @@
         },
         {
             "id": "unit-circle-awgn",
-            "title": "Random point on a circle with Gaussian error",
+            "title": "Random point on a circle with Gaussian error, Bayes estimate",
             "scoring": {
                 "bronze": 0.28,
                 "silver": 0.265,
@@ -62,7 +71,7 @@
         },
         {
             "id": "gaussian-position-velocity",
-            "title": "Particle measurement with Gaussian position, velocity and error",
+            "title": "Moving object measurements with Gaussian error, Bayes estimate",
             "scoring": {
                 "bronze": 0.30,
                 "silver": 0.26,

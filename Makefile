@@ -9,4 +9,6 @@ build:
 
 	cp r-src/*.r dist/challenges/
 
+	cp assets/* dist/
+
 	python3 scripts/make_challenges.py

@@ -2,19 +2,66 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, type=text/html" charset="UTF-8">
     <link href="/index.css" type="text/css" rel="stylesheet" />
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        processEscapes: true,
+        menuSettings: { inTabOrder: false },
+        "AssistiveMML": {
+            disabled: false,
+            styles: {
+                 ".MJX_Assistive_MathML": {
+                    position:"absolute!important",
+                    clip: (MathJax.Hub.Browser.isMSIE && (document.documentMode||0) < 8 ?
+                        "rect(1px 1px 1px 1px)" : "rect(1px, 1px, 1px, 1px)"),
+                    padding: "1px 0 0 0!important",
+                    border: "0!important",
+                    height: "1px!important",
+                    width: "1px!important",
+                    overflow: "hidden!important",
+                    display:"block!important"
+                }
+            }
+        }
+    });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTM
+L' async></script>
 </head>
 <body>
     <h1>Parameter estimation problems in R</h1>
+    <p>In statistics, a <em>parameter estimation problem</em> takes a very general form. </p>
+
+<p>There is some unknown value $\vartheta\in\Theta$ called a <strong>parameter</strong>, which represents an unknown real-world quantity. The parameter's value cannot be observed directly - instead, values $\omega\in\Omega$ in some set $\Omega$ represent the set of all "observables". For each parameter $\vartheta$, there is a probability distribution $p_\vartheta\in\mathcal P$ on the set $\Omega$ describing the likelihood of each possible observation when the parameter's true value is $\vartheta$.</p>
+
+<p>In a parameter estimation problem, you are tasked with producing an estimate $y^\ast\in Y$ of some function of the true parameter $y = f(\vartheta)\in Y$. (Often, you are just supposed to estimate the parameter itself, so that $f(\vartheta)=\vartheta$.) There is a <strong>loss function</strong> $L(\vartheta,\vartheta^\ast) &gt; 0$ describing how much you are penalized for your guess, depending on how "far off" from the true value your estimate is. If $\delta: \Omega \to Y$ is your <strong>decision function</strong> for making an estimate based on an observation, then the <strong>risk function</strong> is defined as the <em>expected loss</em> for a given true value of the parameter: <script type="math/tex; mode=display">R(\vartheta) ~ := ~ \mathbb E_\omega[L(\vartheta,\delta(\omega))]</script>
+</p>
+
+<p>How to choose the <em>best possible</em> decision function $\delta$ is, in part, a matter of preference. Perhaps $\vartheta$ itself is a random value chosen from some prior distribution on $\Theta$ - then you can try to minimize the <em>expected risk</em> $\mathbb E_\vartheta[R(\vartheta)]$. (This is called a <strong>Bayes estimator.</strong>) Or perhaps you want to minimize the <em>worst-case</em> risk over all possible values of $\vartheta\in\Theta$. (This is called a <strong>minimax estimator</strong>.)</p>
+
+<p><center>
+<img src="/parameter-estimation.png" alt="figure" />
+</center></p>
+
+<p>The following puzzles describe a variety of different statistical estimation problems. In each one, you will be told the parameter space $\Theta$, the observable space $\Omega$, the family of distributions $\mathcal P$, the loss function $L$, and the way in which risk $R$ should be minimized. You should write a decision function $\delta$ in the R programming language that calculates the best possible estimate.</p>
+
+<p>Good luck!</p>
+
     <div id="problem-list-container">
     
         <div class="problem-container-div" id="bern10-problem-div"
             onclick="location.href='/challenges/bern10.html'">
-            <a>Bernoulli 10-sample estimator</a>
+            <a>10 unfair coin flips, Bayes estimator of coin bias</a>
         </div>
     
         <div class="problem-container-div" id="bern3-minimax-problem-div"
             onclick="location.href='/challenges/bern3-minimax.html'">
-            <a>Bernoulli 3-sample minimax</a>
+            <a>3 unfair coin flips, minimax estimator of coin bias</a>
+        </div>
+    
+        <div class="problem-container-div" id="bernoulli-switching-problem-div"
+            onclick="location.href='/challenges/bernoulli-switching.html'">
+            <a>Bernoulli bias switching time, maximum likelihood estimator</a>
         </div>
     
         <div class="problem-container-div" id="chicken-uniform-problem-div"
@@ -29,17 +76,17 @@
     
         <div class="problem-container-div" id="gaussian-awgn-problem-div"
             onclick="location.href='/challenges/gaussian-awgn.html'">
-            <a>Gaussian prior with Gaussian error</a>
+            <a>Random point with Gaussian error, Bayes estimate</a>
         </div>
     
         <div class="problem-container-div" id="unit-circle-awgn-problem-div"
             onclick="location.href='/challenges/unit-circle-awgn.html'">
-            <a>Random point on a circle with Gaussian error</a>
+            <a>Random point on a circle with Gaussian error, Bayes estimate</a>
         </div>
     
         <div class="problem-container-div" id="gaussian-position-velocity-problem-div"
             onclick="location.href='/challenges/gaussian-position-velocity.html'">
-            <a>Particle measurement with Gaussian position, velocity and error</a>
+            <a>Moving object measurements with Gaussian error, Bayes estimate</a>
         </div>
      
     </div>
