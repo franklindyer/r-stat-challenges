@@ -35,7 +35,7 @@ L' async></script>
     {% for chal in chals %}
         <div class="problem-container-div" id="{{ chal['id'] }}-problem-div"
             onclick="location.href='/challenges/{{ chal['id'] }}.html'">
-            <a>{{ chal['title'] }}</a>
+            <a><a>{{ chal['difficulty'] }}</a> &nbsp; {{ chal['title'] }}</a>
         </div>
     {% endfor %} 
     </div>

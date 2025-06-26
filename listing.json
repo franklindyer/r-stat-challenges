@@ -9,6 +9,7 @@
         {
             "id": "bern10",
             "title": "10 unfair coin flips, Bayes estimator of coin bias",
+            "difficulty": "★☆☆☆☆",
             "scoring": {
                 "bronze": 0.022,
                 "silver": 0.018,
@@ -18,6 +19,7 @@
         {
             "id": "bern3-minimax",
             "title": "3 unfair coin flips, minimax estimator of coin bias",
+            "difficulty": "★★★☆☆",
             "scoring": {
                 "bronze": 0.05,
                 "silver": 0.04,
@@ -27,6 +29,7 @@
         {
             "id": "bernoulli-switching",
             "title": "Bernoulli bias switching time, maximum likelihood estimator",
+            "difficulty": "★★★☆☆",
             "scoring": {
                 "bronze": 0.83,
                 "silver": 0.81,
@@ -36,6 +39,7 @@
         {
             "id": "chicken-uniform",
             "title": "Chicken",
+            "difficulty": "★★★★☆",
             "scoring": {
                 "bronze": 0.25,
                 "silver": 0.23,
@@ -45,6 +49,7 @@
         {
             "id": "gaussian-bclass",
             "title": "Binary classification with 2 Gaussians",
+            "difficulty": "★★☆☆☆",
             "scoring": {
                 "bronze": 0.3,
                 "silver": 0.25,
@@ -53,7 +58,8 @@
         },
         {
             "id": "gaussian-awgn",
-            "title": "Random point with Gaussian error, Bayes estimate", 
+            "title": "Random point with Gaussian error, Bayes estimate",
+            "difficulty": "★☆☆☆☆",
             "scoring": {
                 "bronze": 0.210,
                 "silver": 0.205,
@@ -63,6 +69,7 @@
         {
             "id": "unit-circle-awgn",
             "title": "Random point on a circle with Gaussian error, Bayes estimate",
+            "difficulty": "★★★★★",
             "scoring": {
                 "bronze": 0.28,
                 "silver": 0.265,
@@ -72,6 +79,7 @@
         {
             "id": "gaussian-position-velocity",
             "title": "Moving object measurements with Gaussian error, Bayes estimate",
+            "difficulty": "★★★★☆",
             "scoring": {
                 "bronze": 0.30,
                 "silver": 0.26,
