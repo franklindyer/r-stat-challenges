@@ -8,7 +8,8 @@
     "challenges": [
         {
             "id": "bern10",
-            "title": "10 unfair coin flips, Bayes estimator of coin bias",
+            "title": "Bias of an unfair coin, part I",
+            "subtitle": "Binomial distribution with unknown success probability, Bayes estimator",
             "difficulty": "★☆☆☆☆",
             "scoring": {
                 "bronze": 0.022,
@@ -18,7 +19,8 @@
         },
         {
             "id": "bern3-minimax",
-            "title": "3 unfair coin flips, minimax estimator of coin bias",
+            "title": "Bias of an unfair coin, part II",
+            "subtitle": "Binomial distribution with unknown success probability, minimax estimator",
             "difficulty": "★★★☆☆",
             "scoring": {
                 "bronze": 0.05,
@@ -28,7 +30,8 @@
         },
         {
             "id": "bern-thresh-minimax",
-            "title": "10 unfair coin flips, minimax estimator with discrete loss threshold",
+            "title": "Bias of an unfair coin, part III",
+            "subtitle": "Binomial distribution with unknown success probability, minimax estimator",
             "difficulty": "★★★★★",
             "scoring": {
                 "bronze": 0.98,
@@ -38,7 +41,8 @@
         },
         {
             "id": "bernoulli-switching",
-            "title": "Bernoulli bias switching time, maximum likelihood estimator",
+            "title": "Switching time between two unfair coins",
+            "subtitle": "Unknown number of samples from different Bernoulli distributions, maximum likelihood estimator",
             "difficulty": "★★★☆☆",
             "scoring": {
                 "bronze": 0.83,
@@ -49,6 +53,7 @@
         {
             "id": "chicken-uniform",
             "title": "Chicken",
+            "subtitle": "Uniform distribution with unknown maximum, Bayes estimator with an unusual loss function",
             "difficulty": "★★★★☆",
             "scoring": {
                 "bronze": 0.25,
@@ -58,7 +63,8 @@
         },
         {
             "id": "gaussian-bclass",
-            "title": "Binary classification with 2 Gaussians",
+            "title": "Distinguish between 2 Gaussians",
+            "subtitle": "Binary classification problem between two normal distributions",
             "difficulty": "★★☆☆☆",
             "scoring": {
                 "bronze": 0.3,
@@ -68,7 +74,8 @@
         },
         {
             "id": "gaussian-awgn",
-            "title": "Random point with Gaussian error, Bayes estimate",
+            "title": "Unknown number with Gaussian error",
+            "subtitle": "Given sum of two normally distributed variables, Bayes estimator for one of them",
             "difficulty": "★☆☆☆☆",
             "scoring": {
                 "bronze": 0.210,
@@ -78,7 +85,8 @@
         },
         {
             "id": "unit-circle-awgn",
-            "title": "Random point on a circle with Gaussian error, Bayes estimate",
+            "title": "Unknown point on circle with Gaussian error",
+            "subtitle": "Bayes estimator for uniformly distributed point on circle, given measurement with normally distributed error",
             "difficulty": "★★★★★",
             "scoring": {
                 "bronze": 0.28,
@@ -88,7 +96,8 @@
         },
         {
             "id": "gaussian-position-velocity",
-            "title": "Moving object measurements with Gaussian error, Bayes estimate",
+            "title": "Moving particle with unknown position and velocity",
+            "subtitle": "Bayes estimator for position and velocity, given time series of positions with normally distributed error",
             "difficulty": "★★★★☆",
             "scoring": {
                 "bronze": 0.30,

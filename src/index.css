@@ -165,3 +165,25 @@ blockquote p {
         -webkit-mask-position: 0%;
     }
 }
+
+.difficulty-rating {
+    display: inline-block;
+}
+
+.challenge-title-div {
+    display: block;
+}
+
+.challenge-title {
+}
+
+.subtitle-span {
+    display: block;
+    font-size: 12px;
+    color: #888888;
+}
+
+.challenge-page-subtitle {
+    font-size: 16px;
+    color: #888888;
+}

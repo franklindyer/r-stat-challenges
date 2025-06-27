@@ -31,6 +31,8 @@
 </head>
 <body>
     <h1>{{ chal['title'] }}</h1>
+    <h2 class="challenge-page-subtitle">{{ chal['subtitle'] }}</h2>
+    <hr>
 
     {{ content }}
 
