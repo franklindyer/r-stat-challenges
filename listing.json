@@ -27,6 +27,16 @@
             }
         },
         {
+            "id": "bern-thresh-minimax",
+            "title": "10 unfair coin flips, minimax estimator with discrete loss threshold",
+            "difficulty": "★★★★★",
+            "scoring": {
+                "bronze": 0.98,
+                "silver": 0.95,
+                "gold": 0.935
+            }
+        },
+        {
             "id": "bernoulli-switching",
             "title": "Bernoulli bias switching time, maximum likelihood estimator",
             "difficulty": "★★★☆☆",

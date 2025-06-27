@@ -16,6 +16,6 @@ this_puzzle <- make_parameter_problem(
 
 this_tester <- make_parameter_case(
     function() { runif(1, max=1) },
-    bern_theta_gen(10),
+    bern_theta_gen(3),
     sq_loss
 );

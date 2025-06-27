@@ -1,0 +1,80 @@
+<html>
+<head>
+    <meta charset='utf-8' />
+    <link href="/index.css" type="text/css" rel="stylesheet" />
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      processEscapes: true,
+      menuSettings: { inTabOrder: false },
+      "AssistiveMML": {
+         disabled: false,
+         styles: {
+            ".MJX_Assistive_MathML": {
+                position:"absolute!important",
+                clip: (MathJax.Hub.Browser.isMSIE && (document.documentMode||0) < 8 ?
+                    "rect(1px 1px 1px 1px)" : "rect(1px, 1px, 1px, 1px)"),
+                padding: "1px 0 0 0!important",
+                border: "0!important",
+                height: "1px!important",
+                width: "1px!important",
+                overflow: "hidden!important",
+                display:"block!important"
+            }
+        }
+      }
+    });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+
+</head>
+<body>
+    <h1>10 unfair coin flips, minimax estimator with discrete loss threshold</h1>
+
+    <p>You need to estimate the parameter $p$ belonging to the interval $[0,1]$. To estimate it, you are given the value of a random variable $\omega\sim\text{Binom}(10, p)$. The loss function is given by:</p>
+
+<p>
+<script type="math/tex; mode=display">L(p,p^\ast) = \begin{cases} 1 & \text{if } |p-p^\ast| > 0.02 \\ 0 & \text{else}\end{cases}</script>
+</p>
+
+<p>That is, you suffer a loss of $L(p,p^\ast) = 1$ if you fail to estimate the parameter $p$ with an error less than $0.02$, and you suffer no loss if your estimate is within this threshold. You should minimize the worst-case average loss across all possible values of $p\in [0,1]$ - that is, you should produce a minimax estimate for the parameter $p$.</p>
+
+
+    <button id="code-run-button" disabled>Score my answer</button>
+    <button id="code-test-button" disabled>Run a test</button>
+    <div id="run-score-box" class="result-box"></div>
+    <div id="run-example-box">
+        <div class="run-example-subbox result-box" id="run-example-parameter"></div>
+        <div class="run-example-subbox result-box" id="run-example-observation"></div>
+        <div class="run-example-subbox result-box" id="run-example-estimate"></div>
+        <div class="run-example-subbox result-box" id="run-example-loss"></div>
+    </div>
+    <pre id="code-error-box"></pre>
+    <div class="progress-bar" id="main-progress-bar"><div class="progress-bar-value"></div></div>
+    <div>
+        <div id="editor" style="height: 800px;">decision_fxn <- function(omega) {
+    # Calculate your estimate for p using omega, trying to get within 0.02 of the true value
+    p_star <- 0.5;
+    p_star
+}
+</div>
+        <div id="scoring-hint-box">
+            Scoring <hr> 
+            <b>Bronze:</b> 0.98 <br>
+            <b>Silver:</b> 0.95 <br>
+            <b>Gold:</b> 0.935
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.42.0/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        let CONF = {'bronze-color': '#cd7f32', 'silver-color': '#cccccc', 'gold-color': '#ffd700', 'default-color': '#dddddd'};
+        let CHALLENGE = "bern-thresh-minimax";
+        let SCORING = {'bronze': 0.98, 'silver': 0.95, 'gold': 0.935};
+    </script>
+    <script type="text/javascript" src="/shared.js"></script>
+    <script type="text/javascript" src="/index.js"></script>
+
+</body>
+</html>
