@@ -51,6 +51,17 @@
             }
         },
         {
+            "id": "unif-minimax",
+            "title": "Minimax upper bound of interval", 
+            "subtitle": "Uniform distribution with unknown maximum, minimax squared difference loss",  
+            "difficulty": "★★★★★",
+            "scoring": {
+                "bronze": 0.10,
+                "silver": 0.09,
+                "gold": 0.08
+            }
+        },
+        {
             "id": "chicken-uniform",
             "title": "Chicken",
             "subtitle": "Uniform distribution with unknown maximum, Bayes estimator with an unusual loss function",
@@ -85,7 +96,7 @@
         },
         {
             "id": "unit-circle-awgn",
-            "title": "Unknown point on circle with Gaussian error",
+            "title": "Unknown point on a circle with Gaussian error",
             "subtitle": "Bayes estimator for uniformly distributed point on circle, given measurement with normally distributed error",
             "difficulty": "★★★★★",
             "scoring": {

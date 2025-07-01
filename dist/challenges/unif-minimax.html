@@ -30,19 +30,19 @@
 
 </head>
 <body>
-    <h1>Unknown point on a circle with Gaussian error</h1>
-    <h2 class="challenge-page-subtitle">Bayes estimator for uniformly distributed point on circle, given measurement with normally distributed error</h2>
+    <h1>Minimax upper bound of interval</h1>
+    <h2 class="challenge-page-subtitle">Uniform distribution with unknown maximum, minimax squared difference loss</h2>
     <hr>
 
-    <p>The parameter you need to guess is called $\vartheta$. You may assume that it is chosen uniformly and at random from the interval $[0,2\pi)$, that is, $\vartheta\sim \mathcal U(0, 2\pi)$. You are given the value of the point corresponding to the angle $\vartheta$ on the unit circle, plus some amount of random error. That is, you are given the vector <script type="math/tex; mode=display">\vec{\omega} ~ = ~ \begin{bmatrix}\cos\vartheta \\ \sin\vartheta\end{bmatrix} + \begin{bmatrix}\epsilon_1 \\ \epsilon_2\end{bmatrix}</script> where $\epsilon_1, \epsilon_2$ are independent and normally distributed error terms with zero mean and respective standard deviations $\sigma_1 = 0.3$ and $\sigma_2 = 0.6$.</p>
+    <p>You need to estimate an unknown parameter $\theta$ belonging to the interval $[0,1]$. You are given the value of a random variable $\omega\sim \mathcal U(0,\vartheta)$, that is, uniformly distributed in the interval $[0,\vartheta]$.</p>
 
-<p>The loss function is the distance between the point on the unit circle corresponding to the true angle $\vartheta$ and the point on the unit circle corresponding to your estimated angle $\vartheta^\ast$: <script type="math/tex; mode=display">L(\vartheta, \vartheta^\ast) = (\cos\vartheta - \cos\vartheta^\ast)^2 + (\sin\vartheta - \sin\vartheta^\ast)^2</script> and you need to minimize the average expected loss.</p>
+<p>The loss function for your estimate is the usual squared-difference loss: <script type="math/tex; mode=display">L(\vartheta,\vartheta^\ast) = (\vartheta - \vartheta^\ast)^2</script> and you need to minimize the worst case expected loss (i.e. the minimax loss).</p>
 
 <p>In the R code below:</p>
 
 <ul>
-<li><code>omega</code> is the point on the unit circle at angle $\vartheta$, plus some error</li>
-<li><code>decision_fxn</code> should return an angle in the interval $[0,2\pi)$ estimating $\vartheta$</li>
+<li><code>omega</code> is a number in the interval $[0,1]$ distributed according to $\mathcal U(0,\vartheta)$</li>
+<li><code>decision_fxn</code> should return your estimate for the unknown parameter $\vartheta\in [0,1]$</li>
 </ul>
 
 
@@ -59,24 +59,24 @@
     <div class="progress-bar" id="main-progress-bar"><div class="progress-bar-value"></div></div>
     <div>
         <div id="editor" style="height: 800px;">decision_fxn <- function(omega) {
-    # Estimate the true angle in terms of omega, a perturbed point on the unit circle
-    theta_est <- 0;
-    theta_est
+    # Calculate an estimate for theta in terms of omega ~ U(0, theta) to minimiax the worst-case loss
+    theta_star <- 0;
+    theta_star
 }
 </div>
         <div id="scoring-hint-box">
             Scoring <hr> 
-            <b>Bronze:</b> 0.28 <br>
-            <b>Silver:</b> 0.265 <br>
-            <b>Gold:</b> 0.255
+            <b>Bronze:</b> 0.1 <br>
+            <b>Silver:</b> 0.09 <br>
+            <b>Gold:</b> 0.08
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.42.0/ace.js" type="text/javascript" charset="utf-8"></script>
     <script>
         let CONF = {'bronze-color': '#cd7f32', 'silver-color': '#cccccc', 'gold-color': '#ffd700', 'default-color': '#dddddd'};
-        let CHALLENGE = "unit-circle-awgn";
-        let SCORING = {'bronze': 0.28, 'silver': 0.265, 'gold': 0.255};
+        let CHALLENGE = "unif-minimax";
+        let SCORING = {'bronze': 0.1, 'silver': 0.09, 'gold': 0.08};
     </script>
     <script type="text/javascript" src="/shared.js"></script>
     <script type="text/javascript" src="/index.js"></script>
