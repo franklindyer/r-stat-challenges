@@ -34,7 +34,7 @@
     <h2 class="challenge-page-subtitle">Binomial distribution with unknown success probability, minimax estimator</h2>
     <hr>
 
-    <p>The parameter you need to guess is called $p$. You are given a list of the results of $3$ Bernoulli trials $\sim \text{Bern}(p)$ to inform your estimate with. </p>
+    <p>The parameter you need to guess is called $p$. You are given a list of the results of $3$ Bernoulli trials $\sim \text{Bern}(p)$ to inform your estimate with. Alternatively, you could consider this to be a binomially distributed random variable $\sim \text{Binom}(3, p)$ in terms of the number of 1s. </p>
 
 <p>The loss function is <script type="math/tex; mode=display">L(p,p^\ast) = (p-p^\ast)^2</script> and you need to minimize the <em>maximum</em> expected loss. That is, you need to make the <em>worst-case</em> expected loss as small as possible across all possible values of $p\in [0,1]$. </p>
 
