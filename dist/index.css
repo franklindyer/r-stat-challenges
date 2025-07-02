@@ -13,6 +13,11 @@ img {
     margin: 5px;
 }
 
+.info-bottomtext {
+    font-weight: bold;
+    color: #888888;
+}
+
 .problem-container-div {
     font-family: Menlo;
     border-radius: 3px;
